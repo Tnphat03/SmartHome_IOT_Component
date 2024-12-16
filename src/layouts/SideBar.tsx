@@ -69,9 +69,9 @@ function Sidebar() {
     ];
     return (
         <>
-            <div className="flex justify-center items-center w-full border-b-[1px] border-solid border-second pb-5 mb-5">
-                {/* <Image className="scale-[200%] mt-5" isBlurred width={50} src={logo} alt="Course Edut" /> */}
-            </div>
+            {/* <div className="flex justify-center items-center w-full ">
+                <Image className="scale-[200%] mt-5" isBlurred width={50} src={logo} alt="Course Edut" />
+            </div> */}
             <Accordion 
                 showDivider={false}
                 className="m-0 p-0 "

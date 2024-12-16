@@ -112,8 +112,6 @@ export interface WebSocketMessage<T> {
           onValueChange={toggleLight}>
             Light
       </Switch>
-      <FlameSensor/>
-      <RoomCard name={"Room 1"} status={"Bình thường"} price={0}/>
     </div>
   );
 
