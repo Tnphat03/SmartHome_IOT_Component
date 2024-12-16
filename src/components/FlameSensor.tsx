@@ -9,11 +9,11 @@ const FlameSensor: React.FC = () => {
 
   return (
     <div
-      className={`border rounded-xl p-4 flex flex-col justify-between items-center w-[180px] h-[130px] relative shadow-sm hover:shadow-md transition-all duration-300 ${
-        isSensorOn ? "bg-[#458484]" : "bg-white"
+      className={`border rounded-[25px] p-[20px] flex flex-col justify-between items-center w-[163px] h-[136px] relative shadow-sm hover:shadow-md transition-all duration-300 ${
+        isSensorOn ? "bg-[#294646]" : "bg-white"
       }`}
     >
-      <div className="absolute top-2 left-2">
+      <div className="absolute top-[18px] left-[20px]">
         <span
           className={`font-medium text-sm ${
             isSensorOn ? "text-white" : "text-black"
@@ -22,16 +22,26 @@ const FlameSensor: React.FC = () => {
           {isSensorOn ? "ON" : "OFF"}
         </span>
       </div>
-      <div className="absolute top-12 left-1 flex flex-col items-center">
-        <div className="w-10 h-10 flex items-center justify-center mb-1">
-          <span className="material-symbols-outlined text-[24px] text-gray-500">
+      <div className="absolute top-[50px] left-[10px] flex flex-col items-center">
+        <div className="w-12 h-12 flex items-center justify-center mb-[4px]">
+          <span
+            className={`material-symbols-outlined text-[32px] ${
+              isSensorOn ? "text-white" : "text-gray-500"
+            }`}
+          >
             light_mode
           </span>
         </div>
-        <h3 className="text-teal-500 font-semibold">Lights</h3>
+        <h3
+          className={`font-medium mb-[30px] text-sm ${
+            isSensorOn ? "text-white" : "text-teal-500"
+          }`}
+        >
+          Lights
+        </h3>
       </div>
-      <div className="absolute top-2 right-2">
-        <label className="relative inline-block w-10 h-6">
+      <div className="absolute top-[20px] right-[20px]">
+        <label className="relative inline-block w-8 h-5">
           <input
             type="checkbox"
             className="sr-only"
@@ -40,8 +50,8 @@ const FlameSensor: React.FC = () => {
           />
           <span className="block w-full h-full bg-gray-300 rounded-full transition-all duration-300" />
           <span
-            className={`absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm transition-transform duration-300 ${
-              isSensorOn && "transform translate-x-4"
+            className={`absolute left-1 top-[2px] w-3.5 h-3.5 rounded-full shadow-sm transition-transform duration-300 ${
+              isSensorOn ? "transform translate-x-3 bg-[#294646]" : "bg-white"
             }`}
           />
         </label>
