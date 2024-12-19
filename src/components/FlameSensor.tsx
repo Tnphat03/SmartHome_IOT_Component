@@ -9,7 +9,7 @@ const FlameSensor: React.FC = () => {
 
   return (
     <div
-      className={`border rounded-[25px] p-[20px] flex flex-col justify-between items-center w-[163px] h-[136px] relative shadow-sm hover:shadow-md transition-all duration-300 ${
+      className={`rounded-[30px] p-[20px] flex flex-col justify-between items-center w-[163px] h-[136px] relative shadow-sm hover:shadow-lg transition-all duration-300 ${
         isSensorOn ? "bg-[#294646]" : "bg-white"
       }`}
     >
@@ -48,9 +48,15 @@ const FlameSensor: React.FC = () => {
             checked={isSensorOn}
             onChange={toggleSensor}
           />
-          <span className="block w-full h-full bg-gray-300 rounded-full transition-all duration-300" />
+          {/* Toggle background */}
           <span
-            className={`absolute left-1 top-[2px] w-3.5 h-3.5 rounded-full shadow-sm transition-transform duration-300 ${
+            className={`block w-full h-full rounded-full transition-all duration-300 ${
+              isSensorOn ? "bg-white" : "bg-[rgba(41,70,70,0.4)]"
+            }`}
+          />
+          {/* Toggle circle */}
+          <span
+            className={`absolute left-1 top-[2px] w-3.5 h-3.5 rounded-full shadow-md transition-transform duration-300 ${
               isSensorOn ? "transform translate-x-3 bg-[#294646]" : "bg-white"
             }`}
           />
