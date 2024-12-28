@@ -1,12 +1,13 @@
-import SensorItem, { ISensor } from "../components/SensorItem";
-import FlameSensor from "../components/FlameSensor";
-import RoomCard from "../components/RoomCard";
-import RoomInfor from "../components/RoomInfor";
-import SortDropdown from "../components/SortDropdown";
+// import SensorItem, { ISensor } from "../components/SensorItem";
+// import FlameSensor from "../components/FlameSensor";
+// import RoomCard from "../components/RoomCard";
+// import RoomInfor from "../components/RoomInfor";
+// import SortDropdown from "../components/SortDropdown";
+import Room from "../components/Room";
 function Phat() {
   return (
-    <>
-      <FlameSensor />
+    //<>
+      {/* <FlameSensor />
       <RoomCard name={"Room 1"} status={"Bình thường"} price={0} />
       <RoomInfor
         imageSrc="https://via.placeholder.com/400"
@@ -19,8 +20,13 @@ function Phat() {
         doorStatus="locked"
         price="3m5"
       />
-      <SortDropdown />
-    </>
+      <SortDropdown /> */}
+
+    //</>
+    <div style={{ width: "100vw", height: "100vh" }}>
+      <Room  />
+
+    </div>
   );
 }
 
