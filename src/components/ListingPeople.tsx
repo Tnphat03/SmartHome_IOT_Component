@@ -10,7 +10,6 @@ const ListingPeople = () => {
       address: "436 Street 3-2",
       image: "",
     },
-    // Có thể thêm nhiều người vào danh sách nếu cần
   ]);
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const listRef = useRef<HTMLDivElement>(null);

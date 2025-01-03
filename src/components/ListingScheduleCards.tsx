@@ -90,7 +90,7 @@ const ListingScheduleCards = () => {
 
       <div
         ref={listRef}
-        className="rounded-[24px] h-[190px] space-y-2 max-h-[200px] overflow-y-auto"
+        className="rounded-[24px] h-[200px] space-y-2 max-h-[200px] overflow-y-auto"
       >
         {renderScheduleList()}
       </div>

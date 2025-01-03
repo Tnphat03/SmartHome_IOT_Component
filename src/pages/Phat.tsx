@@ -1,5 +1,5 @@
 // import SensorItem, { ISensor } from "../components/SensorItem";
-import FlameSensor from "../components/FlameSensor";
+import NewFlameSensor from "../components/NewFlameSensor";
 //import RoomCard from "../components/RoomCard";
 // import RoomInfor from "../components/RoomInfor";
 // import SortDropdown from "../components/SortDropdown";
@@ -34,27 +34,26 @@ function Phat() {
     //   </div>
     // </div>
     <div className="p-5">
-      <div className="flex gap-[40px]">
-        {/* 4 FlameSensors */}
-        <div className="flex gap-[30px]">
-          <FlameSensor />
-          <FlameSensor />
-          <FlameSensor />
-          <FlameSensor />
+      {/* Dòng chứa FlameSensors và ListingPeople */}
+      <div className="flex gap-x-5 md:gap-x-8 lg:gap-x-10 relative">
+        <div className="flex gap-x-2 sm:gap-x-3 md:gap-x-5 flex-grow">
+          <NewFlameSensor output={42} />
+          <NewFlameSensor output={42} />
+          <NewFlameSensor output={42} />
+          <NewFlameSensor output={42} />
         </div>
-        <div className="flex-1">
+        <div className="flex flex-grow">
           <ListingPeople />
         </div>
+        <div className="absolute top-[160px] left-1/2 transform -translate-x-[72%] bg-gray-100 w-[790px] h-[456px]" />
       </div>
 
-      <div className="flex gap-[40px] mt-[20px]">
-        {/* Khoảng trống để giữ đúng layout */}
-        <div className="flex-1" />
+      <div className="flex gap-x-20 mt-[20px] items-start">
+        <div className="flex-1 "></div>
         <ListingScheduleCards />
       </div>
-      <div className="bg-gray-100 h-64 mt-[30px] mx-[30px]" />
-      {/* Announcements Table */}
-      <div className="mt-[20px]">
+
+      <div className="mt-[40px]">
         <AnnouncementsTable />
       </div>
     </div>

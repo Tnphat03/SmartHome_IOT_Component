@@ -17,6 +17,9 @@
 //   };
 
 import React, { useState } from "react";
+import { RxCaretRight } from "react-icons/rx";
+import { IoIosAdd } from "react-icons/io";
+import { IoIosRemove } from "react-icons/io";
 
 interface ButtonDropdownProps {
   onAdd?: () => void;
@@ -36,13 +39,18 @@ const ButtonDropdown = ({ onAdd, onDelete }: ButtonDropdownProps) => {
         onClick={toggleDropdown}
         className="rounded-[30px] flex items-center border border-gray-300 bg-white text-gray-500 text-lg px-3 py-1"
       >
-        <span
+        {/* <span
           className={`material-symbols-outlined transform transition-transform scale-1 ${
             isOpen ? "rotate-90" : ""
           }`}
         >
           chevron_right
-        </span>
+        </span> */}
+        <RxCaretRight
+          className={`transform transition-transform scale-1 ${
+            isOpen ? "rotate-90" : ""
+          }`}
+        />
       </button>
 
       {isOpen && (
@@ -54,7 +62,7 @@ const ButtonDropdown = ({ onAdd, onDelete }: ButtonDropdownProps) => {
             }}
             className="cursor-pointer flex items-center gap-x-2 p-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors"
           >
-            <span className="material-symbols-outlined text-lg">add</span>
+            <IoIosAdd className="text-lg" />
             Add new
           </a>
           <a
@@ -64,7 +72,7 @@ const ButtonDropdown = ({ onAdd, onDelete }: ButtonDropdownProps) => {
             }}
             className="cursor-pointer flex items-center gap-x-2 p-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors"
           >
-            <span className="material-symbols-outlined text-lg">remove</span>
+            <IoIosRemove className="text-lg" />
             Delete
           </a>
         </div>

@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { MdLightMode } from "react-icons/md";
+import { FaDoorOpen } from "react-icons/fa";
+import { IoMdArrowForward } from "react-icons/io";
 
 interface ScheduleCardProps {
   label: string;
@@ -73,27 +76,19 @@ const ScheduleCard: React.FC<ScheduleCardProps> = ({
           {startTime} → {endTime} | {duration}
         </div>
         <div className="flex items-center space-x-2 mt-2">
-          <span
-            className={`material-symbols-outlined text-lg ${
-              isEnabled ? "text-white" : "text-gray-600"
-            }`}
-          >
-            door_open
-          </span>
-          <span
+          <FaDoorOpen
+            className={`text-lg ${isEnabled ? "text-white" : "text-gray-600"}`}
+          />
+          <IoMdArrowForward
             className={`material-symbols-outlined text-xl font-semibold	 ${
               isEnabled ? "text-white" : "text-gray-600"
             }`}
-          >
-            arrow_forward
-          </span>
-          <span
-            className={`material-symbols-outlined text-xl font-semibold	${
+          />
+          <MdLightMode
+            className={`text-xl font-semibold	${
               isEnabled ? "text-white" : "text-gray-600"
             }`}
-          >
-            light_mode
-          </span>
+          />
         </div>
       </div>
     </div>
