@@ -8,8 +8,9 @@ const ListingPeople = () => {
       name: "Nguyen Tan Phat",
       dob: "20/01/2003",
       address: "436 Street 3-2",
-      image: "", 
+      image: "",
     },
+    // Có thể thêm nhiều người vào danh sách nếu cần
   ]);
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const listRef = useRef<HTMLDivElement>(null);
@@ -24,14 +25,16 @@ const ListingPeople = () => {
         name: `User ${listPeople.length + 1}`,
         dob: "01/01/2000",
         address: "Unknown",
-        image: "", 
+        image: "",
       },
     ]);
   };
 
   const handleDelete = () => {
     if (selectedId === null) return;
-    setList((listPeople) => listPeople.filter((user) => user.id !== selectedId));
+    setList((listPeople) =>
+      listPeople.filter((user) => user.id !== selectedId)
+    );
     setSelectedId(null);
   };
 
@@ -57,7 +60,9 @@ const ListingPeople = () => {
 
   const renderUserList = () => {
     if (list.length === 0) {
-      return <div className="text-center text-gray-500 italic">Danh sách trống</div>;
+      return (
+        <div className="text-center text-gray-500 italic">Danh sách trống</div>
+      );
     }
 
     return list.map((user) => (
@@ -76,16 +81,18 @@ const ListingPeople = () => {
           className="w-12 h-12 rounded-full object-cover"
         />
         <div>
-          <h3 className="text-base font-medium text-left text-gray-800">{user.name}</h3>
+          <h3 className="text-base font-medium text-left text-gray-800">
+            {user.name}
+          </h3>
           <p className="text-sm text-left text-gray-600">{user.dob}</p>
           <p className="text-sm text-left text-gray-600">{user.address}</p>
         </div>
       </div>
     ));
   };
-  //h-80 h-96 dài rộng 384
+
   return (
-    <div className="rounded-[24px] border-1 border-gray w-80 max-w-md mx-auto p-4 bg-gray-50 rounded-lg shadow-md">
+    <div className="rounded-[24px] border-1 border-gray w-80 max-w-md mx-auto p-4 bg-gray-50 shadow-md">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-semibold text-gray-700">List</h2>
         <div ref={dropdownRef} className="relative z-10">
@@ -93,7 +100,10 @@ const ListingPeople = () => {
         </div>
       </div>
 
-      <div ref={listRef} className="rounded-[24px] space-y-4">
+      <div
+        ref={listRef}
+        className="rounded-[24px] h-[200px] space-y-4 max-h-[200px] overflow-y-auto"
+      >
         {renderUserList()}
       </div>
 
@@ -101,7 +111,7 @@ const ListingPeople = () => {
         <button
           ref={editButtonRef}
           style={{ backgroundColor: "#294646" }}
-          className="rounded-[8px] px-10 py-2 text-white rounded-full hover:opacity-90 transition"
+          className="rounded-[8px] px-10 py-2 text-white hover:opacity-90 transition"
         >
           Edit
         </button>
@@ -111,6 +121,3 @@ const ListingPeople = () => {
 };
 
 export default ListingPeople;
-
-// <div class="border-2 border-black hover:border-4 hover:border-red-500 transition-all duration-300 ease-in-out rounded-lg">
-  
