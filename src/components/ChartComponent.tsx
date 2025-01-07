@@ -1,151 +1,3 @@
-// import React, { useState } from "react";
-// import {
-//   Chart as ChartJS,
-//   CategoryScale,
-//   LinearScale,
-//   BarElement,
-//   PointElement,
-//   LineElement,
-//   Title,
-//   Tooltip,
-//   Legend,
-// } from "chart.js";
-// import { Chart } from "react-chartjs-2";
-// import { mockData, WeatherData } from "./mockData";
-// import { RxCaretRight } from "react-icons/rx";
-
-// ChartJS.register(
-//   CategoryScale,
-//   LinearScale,
-//   BarElement,
-//   PointElement,
-//   LineElement,
-//   Title,
-//   Tooltip,
-//   Legend
-// );
-
-// const ChartComponent: React.FC = () => {
-//   const [currentData, setCurrentData] = useState<WeatherData>(mockData.daily);
-//   const [menuOpen, setMenuOpen] = useState(false);
-
-//   const handleDataChange = (type: keyof typeof mockData) => {
-//     setCurrentData(mockData[type]);
-//     setMenuOpen(false);
-//   };
-
-//   const combinedChartData = {
-//     labels: currentData.labels,
-//     datasets: [
-//       {
-//         type: "line" as const,
-//         label: "Temperature (°C)",
-//         data: currentData.temperature,
-//         borderColor: "rgba(75, 192, 192, 1)",
-//         backgroundColor: "rgba(75, 192, 192, 0.2)",
-//         yAxisID: "y1",
-//       },
-//       {
-//         type: "bar" as const,
-//         label: "Humidity (%)",
-//         data: currentData.humidity,
-//         backgroundColor: "rgba(255, 99, 132, 0.6)",
-//         yAxisID: "y2",
-//       },
-//     ],
-//   };
-
-//   const options = {
-//     responsive: true,
-//     plugins: {
-//       legend: {
-//         position: "top" as const,
-//       },
-//       title: {
-//         display: true,
-//         text: "Temperature and Humidity",
-//       },
-//     },
-//     scales: {
-//       // x: {
-//       //   title: {
-//       //     display: true,
-//       //     text: "Time",
-//       //   },
-//       // },
-//       y1: {
-//         type: "linear" as const,
-//         position: "left" as const,
-//         title: {
-//           display: true,
-//           text: "Temperature (°C)",
-//         },
-//       },
-//       y2: {
-//         type: "linear" as const,
-//         position: "right" as const,
-//         title: {
-//           display: true,
-//           text: "Humidity (%)",
-//         },
-//         grid: {
-//           drawOnChartArea: false,
-//         },
-//       },
-//     },
-//   };
-
-//   return (
-//     <div className="p-3 rounded-lg bg-white text-black dark:bg-gray-800">
-//       <div className="dark:border-gray-800  relative text-right">
-//         <button
-//           type="button"
-//           onClick={() => setMenuOpen(!menuOpen)}
-//           className={`border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white p-2 rounded-full focus:outline-none transition-transform ${
-//             menuOpen ? "rotate-90" : "rotate-0"
-//           }`}
-//         >
-//           <RxCaretRight className="text-lg " />
-//         </button>
-//         {menuOpen && (
-//           <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-100  dark:text-white dark:border-gray-500 dark:bg-gray-800 rounded-lg shadow-lg z-10">
-//             <button
-//               onClick={() => handleDataChange("daily")}
-//               className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-300 dark:bg-gray-800 focus:outline-none"
-//             >
-//               Day
-//             </button>
-//             <button
-//               onClick={() => handleDataChange("weekly")}
-//               className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-300 dark:bg-gray-800 focus:outline-none"
-//             >
-//               Week
-//             </button>
-//             <button
-//               onClick={() => handleDataChange("monthly")}
-//               className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-300 dark:bg-gray-800 focus:outline-none"
-//             >
-//               Month
-//             </button>
-//             <button
-//               onClick={() => handleDataChange("yearly")}
-//               className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-300 dark:bg-gray-800 focus:outline-none"
-//             >
-//               Year
-//             </button>
-//           </div>
-//         )}
-//       </div>
-
-//       <div className="mt-4 border dark:border-gray-700 rounded-lg p-3">
-//         <Chart type="bar" data={combinedChartData} options={options} />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ChartComponent;
-
 import React, { useState, useEffect } from "react";
 import {
   Chart as ChartJS,
@@ -183,7 +35,7 @@ const ChartComponent: React.FC = () => {
 
   const maxDataPoints = 12;
 
-  // Real-time data simulation
+  // hiển thị và tính toán real time
   useEffect(() => {
     if (realTime) {
       const interval = setInterval(() => {
@@ -218,6 +70,7 @@ const ChartComponent: React.FC = () => {
     }
   }, [realTime]);
 
+  //ref hiển thị data tương ứng với button selection
   const handleDataChange = (
     type: "daily" | "weekly" | "monthly" | "yearly" | "realTime"
   ) => {
@@ -261,6 +114,7 @@ const ChartComponent: React.FC = () => {
     setSelectedMonth(month);
   };
 
+  // chart style
   const combinedChartData = {
     labels: currentData.labels.slice(-maxDataPoints),
     datasets: [
@@ -295,7 +149,7 @@ const ChartComponent: React.FC = () => {
             size: 15,
           },
           boxWidth: 20,
-          boxHeight: 5,
+          boxHeight: 0.5,
         },
       },
       title: {
