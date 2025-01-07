@@ -15,13 +15,15 @@ const NewFlameSensor: React.FC<FlameSensorProps> = ({ output }) => {
   return (
     <div
       className={`rounded-[30px] p-[20px] flex flex-col justify-between items-center w-[180px] h-[140px] relative shadow-sm hover:shadow-lg transition-all duration-300 ${
-        isSensorOn ? "bg-[#294646]" : "bg-white"
+        isSensorOn
+          ? "bg-[#294646] dark:bg-gray-900"
+          : "bg-white dark:bg-gray-800 "
       }`}
     >
       <div className="absolute top-[10px] left-[20px]">
         <span
           className={`font-medium text-sm ${
-            isSensorOn ? "text-white" : "text-black"
+            isSensorOn ? "text-white" : "text-black dark:text-white"
           }`}
         >
           {isSensorOn ? "ON" : "OFF"}
@@ -30,20 +32,24 @@ const NewFlameSensor: React.FC<FlameSensorProps> = ({ output }) => {
       <div className="absolute top-[30px] left-[10px] flex flex-col items-center">
         <div className="w-12 h-12 flex items-center justify-center mb-[4px] text-[32px]">
           <CiLight
-            className={isSensorOn ? "text-white" : "text-gray-500"}
+            className={
+              isSensorOn ? "text-white" : "text-gray-500 dark:text-gray-200"
+            }
             size={33}
           />
         </div>
         <h2
           className={`text-sm font-medium text-sm ${
-            isSensorOn ? "text-white" : "text-black"
+            isSensorOn ? "text-white" : "text-black dark:text-white"
           }`}
         >
           Lights
         </h2>
         <span
           className={`text-lg font-bold text-sm mt-[4px] ${
-            isSensorOn ? "text-white" : "text-black"
+            isSensorOn
+              ? "text-white dark:text-red-600"
+              : "text-black dark:text-red-600"
           }`}
         >
           {output} PPM
@@ -64,7 +70,9 @@ const NewFlameSensor: React.FC<FlameSensorProps> = ({ output }) => {
           />
           <span
             className={`absolute left-1 top-[2px] w-3.5 h-3.5 rounded-full shadow-md transition-transform duration-300 ${
-              isSensorOn ? "transform translate-x-3 bg-[#294646]" : "bg-white"
+              isSensorOn
+                ? "transform translate-x-3 bg-[#294646] dark:bg-gray-900"
+                : "bg-white"
             }`}
           />
         </label>

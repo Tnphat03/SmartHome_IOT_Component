@@ -7,6 +7,8 @@ import NewFlameSensor from "../components/NewFlameSensor";
 import ListingPeople from "../components/ListingPeople";
 import AnnouncementsTable from "../components/AnnouncementsTable";
 import ListingScheduleCards from "../components/ListingScheduleCards";
+import ChartComponent from "../components/ChartComponent";
+
 function Phat() {
   return (
     // <div className="p-5">
@@ -45,7 +47,9 @@ function Phat() {
         <div className="flex flex-grow">
           <ListingPeople />
         </div>
-        <div className="absolute top-[160px] left-1/2 transform -translate-x-[72%] bg-gray-100 w-[790px] h-[456px]" />
+        <div className="absolute top-[150px] left-1/2  transform -translate-x-[72%] w-[813px] h-[456px] gap-x-20">
+          <ChartComponent />
+        </div>
       </div>
 
       <div className="flex gap-x-20 mt-[20px] items-start">
