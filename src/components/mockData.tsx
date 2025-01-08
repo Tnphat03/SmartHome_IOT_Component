@@ -84,65 +84,65 @@ export const mockData = {
     ),
     details: {
       Jan: {
-        labels: ["1", "2", "3", "4"],
-        temperature: Array.from({ length: 4 }, () =>
+        labels: Array.from({ length: 31 }, (_, i) => `${i + 1}`),
+        temperature: Array.from({ length: 31 }, () =>
           parseFloat((20 + Math.random() * 10).toFixed(1))
         ),
-        humidity: Array.from({ length: 4 }, () =>
+        humidity: Array.from({ length: 31 }, () =>
           parseFloat((50 + Math.random() * 20).toFixed(1))
         ),
       },
       Feb: {
-        labels: ["1", "2", "3", "4"],
-        temperature: Array.from({ length: 4 }, () =>
+        labels: Array.from({ length: 28 }, (_, i) => `${i + 1}`),
+        temperature: Array.from({ length: 28 }, () =>
           parseFloat((20 + Math.random() * 10).toFixed(1))
         ),
-        humidity: Array.from({ length: 4 }, () =>
+        humidity: Array.from({ length: 28 }, () =>
           parseFloat((50 + Math.random() * 20).toFixed(1))
         ),
       },
       Mar: {
-        labels: ["1", "2", "3", "4"],
-        temperature: Array.from({ length: 4 }, () =>
+        labels: Array.from({ length: 31 }, (_, i) => `${i + 1}`),
+        temperature: Array.from({ length: 31 }, () =>
           parseFloat((20 + Math.random() * 10).toFixed(1))
         ),
-        humidity: Array.from({ length: 4 }, () =>
+        humidity: Array.from({ length: 31 }, () =>
           parseFloat((50 + Math.random() * 20).toFixed(1))
         ),
       },
       Apr: {
-        labels: ["1", "2", "3", "4"],
-        temperature: Array.from({ length: 4 }, () =>
+        labels: Array.from({ length: 30 }, (_, i) => `${i + 1}`),
+        temperature: Array.from({ length: 30 }, () =>
           parseFloat((20 + Math.random() * 10).toFixed(1))
         ),
-        humidity: Array.from({ length: 4 }, () =>
+        humidity: Array.from({ length: 30 }, () =>
           parseFloat((50 + Math.random() * 20).toFixed(1))
         ),
       },
       May: {
-        labels: ["1", "2", "3", "4"],
-        temperature: Array.from({ length: 4 }, () =>
+        labels: Array.from({ length: 31 }, (_, i) => `${i + 1}`),
+        temperature: Array.from({ length: 31 }, () =>
           parseFloat((20 + Math.random() * 10).toFixed(1))
         ),
-        humidity: Array.from({ length: 4 }, () =>
+        humidity: Array.from({ length: 31 }, () =>
           parseFloat((50 + Math.random() * 20).toFixed(1))
         ),
       },
       Jun: {
-        labels: ["1", "2", "3", "4"],
-        temperature: Array.from({ length: 4 }, () =>
+        labels: Array.from({ length: 30 }, (_, i) => `${i + 1}`),
+        temperature: Array.from({ length: 30 }, () =>
           parseFloat((20 + Math.random() * 10).toFixed(1))
         ),
-        humidity: Array.from({ length: 4 }, () =>
+        humidity: Array.from({ length: 30 }, () =>
           parseFloat((50 + Math.random() * 20).toFixed(1))
         ),
       },
       July: {
-        labels: ["1", "2", "3", "4"],
-        temperature: Array.from({ length: 4 }, () =>
+        labels: Array.from({ length: 31 }, (_, i) => `${i + 1}`),
+        temperature: Array.from({ length: 31 }, () =>
           parseFloat((20 + Math.random() * 10).toFixed(1))
         ),
-        humidity: Array.from({ length: 4 }, () =>
+        humidity: Array.from({ length: 31 }, () =>
           parseFloat((50 + Math.random() * 20).toFixed(1))
         ),
       },
