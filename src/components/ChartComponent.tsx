@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react"; // quản lý trạng thái và xử lý logic.
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -37,9 +37,10 @@ const ChartComponent: React.FC = () => {
   const [, setSelectedMonth] = useState<string | null>(null); // Thêm state để lưu tháng được chọn
 
   // Fetch real-time data
+  // trong trường hợp một trong các giá trị trong dependency array ([realTime, paused, currentData.labels.length]) thay đổi thì hàm sẽ hoạt khởi động
   useEffect(() => {
     if (!realTime || paused) return;
-
+    //thực hiện việc cập nhật mỗi 5 giây
     const interval = setInterval(() => {
       const now = new Date();
       const newTime = now.toLocaleTimeString([], {
@@ -55,7 +56,7 @@ const ChartComponent: React.FC = () => {
         temperature: [...prevData.temperature, newTemperature],
         humidity: [...prevData.humidity, newHumidity],
       }));
-
+      //Tăng phạm vi zoom lên 1 (hiển thị dữ liệu mới)
       setZoomRange((prevRange) => [
         Math.max(0, prevRange[0] + 1),
         Math.min(currentData.labels.length + 1, prevRange[1] + 1),
@@ -200,6 +201,7 @@ const ChartComponent: React.FC = () => {
 
   return (
     <div className="p-3 bg-white rounded-lg shadow-lg text-black">
+      {/* button  */}
       <div className="relative text-right mb-4">
         <button
           type="button"
@@ -256,7 +258,7 @@ const ChartComponent: React.FC = () => {
           </div>
         </div>
       )}
-
+      {/* chart */}
       <div className="border rounded-lg p-2">
         <div className="w-full h-96">
           <Chart type="line" data={combinedChartData} options={chartOptions} />
