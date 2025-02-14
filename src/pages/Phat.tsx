@@ -8,7 +8,7 @@ import ListingPeople from "../components/ListingPeople";
 import AnnouncementsTable from "../components/AnnouncementsTable";
 import ListingScheduleCards from "../components/ListingScheduleCards";
 import ChartComponent from "../components/ChartComponent";
-
+import LoginForm from "../components/LoginForm";
 function Phat() {
   return (
     // <div className="p-5">
@@ -35,8 +35,8 @@ function Phat() {
     //     <AnnouncementsTable />
     //   </div>
     // </div>
-    <div className="p-5">
-      {/* Dòng chứa FlameSensors và ListingPeople */}
+    <div>
+      {/* Dòng chứa FlameSensors và ListingPeople
       <div className="flex gap-x-5 md:gap-x-8 lg:gap-x-10 relative">
         <div className="flex gap-x-2 sm:gap-x-3 md:gap-x-5 flex-grow">
           <NewFlameSensor output={42} />
@@ -59,7 +59,8 @@ function Phat() {
 
       <div className="mt-[40px]">
         <AnnouncementsTable />
-      </div>
+      </div> */}
+      <LoginForm />
     </div>
   );
 }
