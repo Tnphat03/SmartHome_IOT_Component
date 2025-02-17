@@ -9,6 +9,7 @@ import AnnouncementsTable from "../components/AnnouncementsTable";
 import ListingScheduleCards from "../components/ListingScheduleCards";
 import ChartComponent from "../components/ChartComponent";
 import LoginForm from "../components/LoginForm";
+import PZEM from "../components/PZEM";
 function Phat() {
   return (
     // <div className="p-5">
@@ -60,7 +61,16 @@ function Phat() {
       <div className="mt-[40px]">
         <AnnouncementsTable />
       </div> */}
-      <LoginForm />
+      {/* <LoginForm /> */}
+      <PZEM
+        voltage={3}
+        current={3}
+        powerFactor={1}
+        frequency={50}
+        power={3}
+        energy={3}
+        totalPowerConsumption={23.85}
+      />
     </div>
   );
 }
