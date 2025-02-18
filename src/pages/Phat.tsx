@@ -1,16 +1,17 @@
-// import SensorItem, { ISensor } from "../components/SensorItem";
-import NewFlameSensor from "../components/NewFlameSensor";
-//import RoomCard from "../components/RoomCard";
-// import RoomInfor from "../components/RoomInfor";
-// import SortDropdown from "../components/SortDropdown";
-//import Room from "../components/Room";
-import ListingPeople from "../components/ListingPeople";
-import AnnouncementsTable from "../components/AnnouncementsTable";
-import ListingScheduleCards from "../components/ListingScheduleCards";
-import ChartComponent from "../components/ChartComponent";
-import LoginForm from "../components/LoginForm";
-import PZEM from "../components/PZEM";
+// // import SensorItem, { ISensor } from "../components/SensorItem";
+// import NewFlameSensor from "../components/NewFlameSensor";
+// //import RoomCard from "../components/RoomCard";
+// // import RoomInfor from "../components/RoomInfor";
+// // import SortDropdown from "../components/SortDropdown";
+// //import Room from "../components/Room";
+// import ListingPeople from "../components/ListingPeople";
+// import AnnouncementsTable from "../components/AnnouncementsTable";
+// import ListingScheduleCards from "../components/ListingScheduleCards";
+// import ChartComponent from "../components/ChartComponent";
+// import LoginForm from "../components/LoginForm";
+// import PZEM from "../components/PZEM";
 import ApartmentCard from "../components/ApartmentCard";
+import NotificationCard from "../components/NotificationCard";
 function Phat() {
   return (
     // <div className="p-5">
@@ -79,6 +80,7 @@ function Phat() {
         energy={150}
         devices={["Sensor", "Door", "Camera"]}
       />
+      <NotificationCard />
     </div>
   );
 }
