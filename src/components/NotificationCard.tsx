@@ -26,7 +26,7 @@ const notifications = [
 
 const NotificationCard = () => {
   return (
-    <div className="w-[499px] h-[521px] bg-white shadow-lg rounded-xl p-4">
+    <div className="w-[499px] h-[521px] bg-white shadow-lg rounded-xl p-4 overflow-y-auto">
       <div className="flex justify-between items-center border-b pb-2">
         <div className="flex items-center gap-2">
           <h2 className="font-semibold text-lg">Notification</h2>
