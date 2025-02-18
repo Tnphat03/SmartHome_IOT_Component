@@ -1,6 +1,6 @@
 import React from "react";
 import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
-import { IoReloadOutline } from "react-icons/io5"; /
+import { IoReloadOutline } from "react-icons/io5";
 
 interface PZEMDataProps {
   voltage: number;
@@ -39,7 +39,6 @@ const PZEM: React.FC<PZEMDataProps> = (props) => {
         </button>
       </div>
 
-      
       <div className="grid grid-cols-3 gap-4 text-gray-600 mt-2 text-sm space-y-2">
         {metrics.map((item, index) => (
           <div key={index}>
@@ -48,8 +47,6 @@ const PZEM: React.FC<PZEMDataProps> = (props) => {
           </div>
         ))}
       </div>
-
-
 
       <div className="flex flex-col items-center mt-4">
         <RadialBarChart
@@ -96,6 +93,5 @@ const PZEM: React.FC<PZEMDataProps> = (props) => {
     </div>
   );
 };
-
 
 export default PZEM;

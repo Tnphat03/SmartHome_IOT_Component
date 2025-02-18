@@ -10,6 +10,7 @@ import ListingScheduleCards from "../components/ListingScheduleCards";
 import ChartComponent from "../components/ChartComponent";
 import LoginForm from "../components/LoginForm";
 import PZEM from "../components/PZEM";
+import ApartmentCard from "../components/ApartmentCard";
 function Phat() {
   return (
     // <div className="p-5">
@@ -62,7 +63,7 @@ function Phat() {
         <AnnouncementsTable />
       </div> */}
       {/* <LoginForm /> */}
-      <PZEM
+      {/* <PZEM
         voltage={3}
         current={3}
         powerFactor={1}
@@ -70,6 +71,13 @@ function Phat() {
         power={3}
         energy={3}
         totalPowerConsumption={23.85}
+      /> */}
+      <ApartmentCard
+        active={true}
+        zone={6}
+        device={20}
+        energy={150}
+        devices={["Sensor", "Door", "Camera"]}
       />
     </div>
   );
